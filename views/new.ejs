@@ -1,0 +1,59 @@
+<%- include ('partials/header.ejs') %>
+<div class="navbar" >
+  <div class="navbar-item">
+    <a href="/works">Back to All Works</a>
+    </div>
+</div>
+<h1>Add New Work</h1>
+<form action="/works" method="POST">
+  <fieldset class="fieldset">
+    <label for="name">Name: </label>
+    <input class="input" id="name" type="text" name="name" placeholder="Enter works name">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="status">Status: </label>
+    <input class="input" id="status" type="text" name="status" placeholder="'Not started', 'In progress', 'Completed'">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="description">Description: </label>
+    <input class="input" id="description" type="text" name="description" placeholder="Enter a brief description of the work">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="status">Responsible: </label>
+    <input class="input" id="responsible" type="text" name="responsible" placeholder="Enter name of person responsible">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="status">Contact Number: </label>
+    <input class="input" id="contact-number" type="text" name="contactNumber" placeholder="Enter responsible's contact number">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="start-date">Start Date: </label>
+    <input class="input" id="start-date" type="date" name="startDate"/>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="end-date">End Date: </label>
+    <input class="input" id="end-date" type="date" name="endDate"/>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="budget">Budget (US$): </label>
+    <input class="input" id="budget" type="number" name="budget" placeholder="Enter work's budget"></input>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="paid">Amount paid (US$): </label>
+    <input class="input" id="paid" type="number" name="paid" placeholder="Enter work's paid amount"></input>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="note">Note: </label>
+    <textarea class="input" id="img" type="text" name="note" placeholder="Enter work's final image url"></textarea>
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="img">Start Image: </label>
+    <input class="input" id="start-Img" type="text" name="startImg" placeholder="Enter work's initial image url">
+  </fieldset>
+  <fieldset class="fieldset">
+    <label for="img">End Image: </label>
+    <input class="input" id="final-Img" type="text" name="finalImg" placeholder="Enter work's final image url">
+  </fieldset>
+  <input class="button" type="submit" name="createWork" value="Create Work"/>
+</form>
+<%- include ('partials/footer.ejs') %>

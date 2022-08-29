@@ -1,0 +1,25 @@
+<%- include ('partials/header.ejs') %>
+    <ul class="navbar" style="list-style-type: none">
+      <li class="navbar-item"><a href="/works">Home</a></li>
+      <li class="navbar-item"><a href="/works/new">Add new</a></li>
+    </ul>
+      <h1 class="page-name"> All Works</h1>
+    <div class="work-preview">
+    <% for(let i = 0; i < works.length; i++) {
+      console.log(works[i].name)
+    %>
+      <table>
+          <tr>
+            <th>Work</th>
+            <th> Status</th>
+          </tr>
+          <tr>
+            <td><a href="/works/<%= works[i].id %>"><%= works[i].name %></a></td>
+            <td><%= works[i].status %> </td>
+          </tr>
+        </table>
+      </div>
+  <% } %>
+
+  </br>
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "heroku": "^7.62.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.5.2",
+    "router": "^1.3.7"
+  },
+  "name": "remodelog",
+  "description": "An app to keep track of all the things that happen during house renovation: people involved, inventory of resources and materiales required and used, money spent, etc.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node apps.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopezferrer/remodelog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopezferrer/remodelog/issues"
+  },
+  "homepage": "https://github.com/lopezferrer/remodelog#readme"
+}
