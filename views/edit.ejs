@@ -28,11 +28,11 @@
         </fieldset>
         <fieldset class="fieldset">
           <label for="start-date">Start Date: </label>
-          <input class="input" id="start-date" type="date" name="startDate" value="<%= work.startDate %>" autocomplete="on"/>
+          <input class="input" id="start-date" type="date" name="startDate" value="<%= work.startDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.startDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.startDate.toLocaleString('en-US',{day: '2-digit'})%>">
         </fieldset>
         <fieldset class="fieldset">
           <label for="end-date">End Date: </label>
-          <input class="input" id="end-date" type="date" name="endDate" value="<%= work.endDate %>"/>
+          <input class="input" id="end-date" type="date" name="endDate" value="<%= work.endDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.endDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.endDate.toLocaleString('en-US',{day: '2-digit'})%>">
         </fieldset>
         <fieldset class="fieldset">
           <label for="budget">Budget (US$): </label>
@@ -44,7 +44,7 @@
         </fieldset>
         <fieldset class="fieldset">
           <label for="note">Note: </label>
-          <textarea class="input" id="img" type="text" name="note" autocomplete="on""><%= work.note %></textarea>
+          <textarea class="input" id="img" type="text" name="note"><%= work.note %></textarea>
         </fieldset>
         <fieldset class="fieldset">
           <label for="img">Start Image: </label>
@@ -60,3 +60,5 @@
     </div>
 
 <%- include ('partials/footer.ejs') %>
+
+<script>document.getElementById("end-date").value = <%= work.startDate %>;</script>

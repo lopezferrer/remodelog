@@ -1,25 +1,32 @@
 <%- include ('partials/header.ejs') %>
+
     <ul class="navbar" style="list-style-type: none">
-      <li class="navbar-item"><a href="/works">Home</a></li>
       <li class="navbar-item"><a href="/works/new">Add new</a></li>
     </ul>
-      <h1 class="page-name"> All Works</h1>
+    <h2 class="page-name"> All Works</h2>
     <div class="work-preview">
-    <% for(let i = 0; i < works.length; i++) {
-      console.log(works[i].name)
-    %>
       <table>
-          <tr>
-            <th>Work</th>
-            <th> Status</th>
-          </tr>
-          <tr>
-            <td><a href="/works/<%= works[i].id %>"><%= works[i].name %></a></td>
-            <td><%= works[i].status %> </td>
+        <% if(works.length > 0) {
+          %>
+        <tr>
+          <th class="table-heading">Work</th>
+          <th class="table-heading">Status</th>
+          <th class="table-heading">Responsible</th>
+          <th class="table-heading">Contact Number</th>
+        </tr>
+        <tr>
+          <% for(let i = 0; i < works.length; i++) {
+            %>
+              <td class="table-element"><a href="/works/<%= works[i].id %>"><%= works[i].name %></a></td>
+              <td class="table-element"><%= works[i].status %> </td>
+              <td class="table-element"><%= works[i].responsible %> </td>
+              <td class="table-element"><%= works[i].contactNumber %> </td>
           </tr>
         </table>
       </div>
   <% } %>
-
+  <% }else{%>
+    <p>Load a new work</p>
+  <% } %>
   </br>
 <%- include ('partials/footer.ejs') %>
