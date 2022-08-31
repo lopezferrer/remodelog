@@ -1,0 +1,113 @@
+body {
+  min-width: 600px;
+  min-height: 100vh;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: normal;
+}
+
+#h1-container {
+  cursor: default;
+  background: lightgray;
+  width: 102%;
+  height: 100px;
+  margin-left: -10px;
+  padding-left: 10px;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 80px;
+  line-height: 1.2em;
+  margin: -10px 0 auto 20px;
+  padding: 10px auto auto 10px;
+}
+
+.navbar-container {
+  height: 35px;
+  background-color: black;
+  width: 102%;
+  margin-left: -10px;
+  padding-left: 10px;
+}
+
+.navbar {
+  all: unset;
+  display: inline;
+}
+
+.navbar-item{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  display: inline;
+  padding-right: 10px;
+  margin-left: 25px;
+  line-height: 1.8em;
+  color: white;
+}
+
+.navbar-item a {
+  all: unset;
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+#page-name-container{
+  margin-left: 10px;
+}
+
+.work-preview{
+  margin-left: 10px;
+}
+
+.page-name-container {
+  margin-left: 20px;
+}
+
+table, th, td {
+  border: 1px solid;
+  margin-left: 10px;
+}
+
+td {
+  padding: 3px 0 5px 10px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  box-shadow: 3px 5px #888888;
+}
+
+.form {
+  width: 600px;
+  margin-left: 20px;
+}
+
+#footer{
+  margin-left: 20px;
+}
+.input {
+  width: 70%;
+  float: right;
+}
+.button {
+  margin: 10px 5px 10px 2px;
+}
+
+.show-work {
+  font-size: 18px;
+  margin-left: 25px;
+}
+
+.img-container {
+  margin-left: 20px;
+}
+
+.buttons-container {
+  margin-left: 20px;
+  max-width: 180px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,64 +1,66 @@
 <%- include ('partials/header.ejs') %>
-<div class="navbar" >
-  <div class="navbar-item">
-    <a href="/works">Back to All Works</a>
+<div class="navbar-container">
+  <ul class="navbar">
+    <li class="navbar-item"><a href="/works">Back to All Works</a></li>
+  </ul>
+</div>
+<div class="page-name-container">
+  <h2>Edit Work</h2>
+</div>
+<div class="form">
+  <form action="/works/<%=work.id%>?_method=PUT" method="POST" style="width:600px">
+    <fieldset class="fieldset">
+      <label for="name">Name: </label>
+      <input class="input" id="name" type="text" name="name" value="<%= work.name %>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="status">Status: </label>
+      <input class="input" id="status" type="text" name="status" value="<%= work.status %>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="description">Description: </label>
+      <input class="input" id="description" type="text" name="description" value="<%= work.description %>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="status">Responsible: </label>
+      <input class="input" id="responsible" type="text" name="responsible" value="<%= work.responsible %>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="status">Contact Number: </label>
+      <input class="input" id="contact-number" type="text" name="contactNumber" value="<%= work.contactNumber %>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="start-date">Start Date: </label>
+      <input class="input" id="start-date" type="date" name="startDate" value="<%= work.startDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.startDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.startDate.toLocaleString('en-US',{day: '2-digit'})%>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="end-date">End Date: </label>
+      <input class="input" id="end-date" type="date" name="endDate" value="<%= work.endDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.endDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.endDate.toLocaleString('en-US',{day: '2-digit'})%>">
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="budget">Budget (US$): </label>
+      <input class="input" id="budget" type="number" name="budget" value="<%= work.budget %>"/>
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="paid">Amount paid (US$): </label>
+      <input class="input" id="paid" type="number" name="paid" value="<%= work.paid %>"/>
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="note">Note: </label>
+      <textarea class="input" id="img" type="text" name="note"><%= work.note %></textarea>
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="img">Start Image: </label>
+      <input class="input" id="start-Img" type="text" name="startImg" value="<%= work.startImg %>"/>
+    </fieldset>
+    <fieldset class="fieldset">
+      <label for="img">End Image: </label>
+      <input class="input" id="final-Img" type="text" name="finalImg" value="<%= work.finalImg %>"/>
+    </fieldset>
     </div>
-    <h2>Edit Work</h2>
-    <div>
-      <form action="/works/<%=work.id%>?_method=PUT" method="POST">
-        <fieldset class="fieldset">
-          <label for="name">Name: </label>
-          <input class="input" id="name" type="text" name="name" value="<%= work.name %>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="status">Status: </label>
-          <input class="input" id="status" type="text" name="status" value="<%= work.status %>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="description">Description: </label>
-          <input class="input" id="description" type="text" name="description" value="<%= work.description %>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="status">Responsible: </label>
-          <input class="input" id="responsible" type="text" name="responsible" value="<%= work.responsible %>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="status">Contact Number: </label>
-          <input class="input" id="contact-number" type="text" name="contactNumber" value="<%= work.contactNumber %>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="start-date">Start Date: </label>
-          <input class="input" id="start-date" type="date" name="startDate" value="<%= work.startDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.startDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.startDate.toLocaleString('en-US',{day: '2-digit'})%>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="end-date">End Date: </label>
-          <input class="input" id="end-date" type="date" name="endDate" value="<%= work.endDate.toLocaleString('en-US',{year: 'numeric'})%>-<%= work.endDate.toLocaleString('en-US',{month: '2-digit'})%>-<%= work.endDate.toLocaleString('en-US',{day: '2-digit'})%>">
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="budget">Budget (US$): </label>
-          <input class="input" id="budget" type="number" name="budget" value="<%= work.budget %>"/>
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="paid">Amount paid (US$): </label>
-          <input class="input" id="paid" type="number" name="paid" value="<%= work.paid %>"/>
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="note">Note: </label>
-          <textarea class="input" id="img" type="text" name="note"><%= work.note %></textarea>
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="img">Start Image: </label>
-          <input class="input" id="start-Img" type="text" name="startImg" value="<%= work.startImg %>"/>
-        </fieldset>
-        <fieldset class="fieldset">
-          <label for="img">End Image: </label>
-          <input class="input" id="final-Img" type="text" name="finalImg" value="<%= work.finalImg %>"/>
-        </fieldset>
-        <input class="submit" type="submit" name="" value="Submit Changes"/>
-        <button><a style="all:unset;" href="/works/<%=work.id%>">Back to this work</a>
-      </form>
-    </div>
-
+    <div class="buttons-container">
+    <input class="submit" type="submit" name="" value="Submit Changes"/>
+    <button><a style="all:unset;" href="/works/<%=work.id%>">Back</a>
+    </form>
+  </div>
 <%- include ('partials/footer.ejs') %>
-
-<script>document.getElementById("end-date").value = <%= work.startDate %>;</script>

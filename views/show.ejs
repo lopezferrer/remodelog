@@ -1,11 +1,12 @@
 <%- include ('partials/header.ejs') %>
-    <div class="navbar" >
-      <div class="navbar-item">
-        <a href="/works">Back to All Works</a>
-        </div>
+<div class="navbar-container">
+  <ul class="navbar" style="list-style-type: none; padding-left: 0;">
+    <li class="navbar-item"><a href="/works">Back to All Works</a></li>
+  </ul>
+</div>
+    <div class="page-name-container">
+      <h2 class="page-name"><%= work.name %></h2>
     </div>
-    <h2 class="page-name"><%= work.name %></h2>
-    <div>
       <p class="show-work"><span style="font-weight:bold;">Description:</span> <%= work.description %></p>
       <p class="show-work"><span style="font-weight:bold;">Responsible:</span> <%= work.responsible %> </p>
       <p class="show-work"><span style="font-weight:bold;">Contact Number:</span> <%= work.contactNumber %> </p>
@@ -15,12 +16,14 @@
       <p class="show-work"><span style="font-weight:bold;">Budget:</span> $<%= work.budget %> </p>
       <p class="show-work"><span style="font-weight:bold;">Paid:</span> $<%= work.paid %> </p>
       <p class="show-work"><span style="font-weight:bold;">Note:</span> <%= work.note %> </p>
-      <img class="work-img" src="<%= work.startImg %> "style="height:200px;">
-      <img class="work-img" src="<%= work.finalImg %> "style="height:200px;">
+      <div class="img-container">
+        <img class="work-img" src="<%= work.startImg %> "style="height:200px;">
+        <img class="work-img" src="<%= work.finalImg %> "style="height:200px;">
+      </div>
     </br>
+    <div class="buttons-container">
       <button><a style="all:unset" href="/works/<%=work.id%>/edit">Edit this work</a></button>
-      <form action="/works/<%=work.id %>?_method=DELETE" method="POST">
-        <input class="submit" type="submit" value="DELETE"/>
-      </form>
+      <form action="/works/<%=work.id %>?_method=DELETE" method="POST"><input class="submit" type="submit" value="DELETE"/></form>
     </div>
-    <%- include ('partials/footer.ejs') %>
+    </br>
+<%- include ('partials/footer.ejs') %>

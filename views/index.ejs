@@ -1,9 +1,13 @@
 <%- include ('partials/header.ejs') %>
-
-    <ul class="navbar" style="list-style-type: none">
+  <div class="navbar-container">
+    <ul class="navbar">
       <li class="navbar-item"><a href="/works/new">Add new</a></li>
+      <li class="navbar-item"><a href="/works/howto">How to use</a></li>
     </ul>
-    <h2 class="page-name"> All Works</h2>
+  </div>
+    <div class="page-name-container">
+      <h2 class="page-name"> All Works</h2>
+    </div>
     <div class="work-preview">
       <table>
         <% if(works.length > 0) {

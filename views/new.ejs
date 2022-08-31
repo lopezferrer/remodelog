@@ -1,10 +1,12 @@
 <%- include ('partials/header.ejs') %>
-<div class="navbar" >
-  <div class="navbar-item">
-    <a href="/works">Back to All Works</a>
-    </div>
+<div class="navbar-container">
+  <ul class="navbar">
+    <li class="navbar-item"><a href="/works">Back to All Works</a></li>
+  </ul>
+<div class="page-name-container">
+  <h2 class="page-name">Add New Work</h2>
 </div>
-<h2 class="page-name">Add New Work</h2>
+<div class="form">
 <form action="/works" method="POST">
   <fieldset class="fieldset">
     <label for="name">Name: </label>
@@ -56,4 +58,5 @@
   </fieldset>
   <input class="button" type="submit" name="createWork" value="Create Work"/>
 </form>
+</div>
 <%- include ('partials/footer.ejs') %>
