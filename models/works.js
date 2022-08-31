@@ -1,23 +1,13 @@
 const mongoose = require('mongoose');
+const db = mongoose.connection;
 
-//SCHEMA
-const worksSchema = new mongoose.Schema({
-    name: { type: String, required: true, unique: true },
-    description: String,
-    responsible: String,
-    contactNumber: {type: Number},
-    status: {type:String, enum:['Not started', 'In progress', 'Completed']}, 
-    startDate: {type: Date},
-    endDate: {type: Date},
-    budget: {type: Number, min: [0, 'Price can\'t be negative']},
-    paid: {type: Number, min: [0, 'Price can\'t be negative']},
-    note: String,
-    startImg: String,
-    finalImg: String,
-  }, {timestamps: true});
+mongoose
+    .connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log(`Mongodb connected at ${db.host}:${db.port}`)
+    })
+    .catch((err) => console.log(err))
 
-//MODEL
-const Work = mongoose.model('Work', worksSchema);
-
-//EXPORT
-module.exports = Work;
+module.exports = {
+    Work: require('./Work.js')
+}

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Work = require('../models/works.js')
+const Work = require('../models/Work.js')
 
 //NEW
 router.get('/new', (req, res) => {
