@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 //LANDING
 app.get('/', (req, res)=>{
-  res.redirect('/works');
+  res.render('landing.ejs');
 });
 
 app.listen(PORT, ()=>{
