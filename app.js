@@ -13,11 +13,9 @@ const worksController = require('./controllers/works.js')
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-
 app.use(methodOverride('_method'))
 app.use('/works', worksController)
 app.use(express.static('public'));
-
 
 //LANDING
 app.get('/', (req, res)=>{
