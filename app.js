@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 //LANDING
 app.get('/', (req, res)=>{
-  res.send('Welcome to RemodeLog');
+  res.redirect('index.ejs');
 });
 
 app.listen(PORT, ()=>{
